@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+ // creo domande e risposte
+void nuovaPartita() {
+    int punteggio = 0;
+    char rispostaa, rispostab, rispostac;
+    char rispostaCorrettaa = 'A';
+    char rispostaCorrettab = 'B';
+    char rispostaCorrettac = 'C';
+
+    printf("Domanda 1: Quando è finita la seconda guerra mondiale?\n");
+    printf("A) 1947\nB) 1945\nC) 1942\n");
+    printf("La Risposta è: (A-B-C): ");
+    scanf(" %c", &rispostab);
+    if (rispostab == rispostaCorrettab) {
+        punteggio++;
+    }
+
+    printf("Domanda 2: Quando è stata scoperta l'America?\n");
+    printf("A) 1492\nB) 1396\nC) 1490\n");
+    printf("La Risposta è: (A-B-C): ");
+    scanf(" %c", &rispostaa);
+    if (rispostaa == rispostaCorrettaa) {
+        punteggio++;
+    }
+
+    printf("Domanda 3: In che anno è stato ucciso John F. Kennedy?\n");
+    printf("A) 1960\nB) 1957\nC) 1963\n");
+    printf("La Risposta è: (A-B-C): ");
+    scanf(" %c", &rispostac);
+    if (rispostac == rispostaCorrettac) {
+        punteggio++;
+    }
+// punteggio finale
+    printf("\tIl Tuo Punteggio Finale è: %d/3\n", punteggio);
+}
+
+int main() {
+    char scelta;
+//creo l'introduzione, il Menù e la chiusura del gioco
+    printf("Benvenuto nel mio gioco di Epicode!\n");
+    printf("Lo scopo del gioco è rispondere correttamente al maggior numero possibile di domande.\n");
+
+    while (1) { //creo un loop
+        printf("\tMenu\n");
+        printf("A) Inizia nuova partita\n");
+        printf("B) Esci dal gioco\n");
+        printf("Scegli: ");
+        scanf(" %c", &scelta);
+
+        if (scelta == 'B' || scelta == 'b') {
+            break; //chiudo il loop
+        } else if (scelta == 'A' || scelta == 'a') {
+            nuovaPartita();
+        } else {
+            printf("Scelta non valida, riprova.\n");
+        }
+    }
+
+    printf("GRAZIE PER AVER GIOCATO!\n");
+    return 0;
+}
+
+    
